@@ -8,6 +8,8 @@ class Article:
         self.__fournisseur : str = fournisseur # le nom du fournisseur du produit
         self.__prix_achat : float = achat # le prix pour lequel le supermarché achète le produit
         self.__prix_vente : float = vente # le prix pour lequel le supermarché vend le produit
+    
+        Article.__nombre_instance += 1
 
     # property nom
     @property
@@ -57,3 +59,8 @@ class Article:
     def description(self):
         """Description des caractéristiques du produit sur l'écran (les prix, le nom, le fournisseur; rendement)."""
         return f"Nom : {self.nom}\nFournisseur : {self.fournisseur}\nPrix d'achat : {self.prix_achat} XOF\nPrix de vente : {self.prix_vente} XOF\nRendement : {self.taux_rendement()} %"
+    
+    ## nombre d'articles
+    @classmethod
+    def nombre_articles(cls):
+        return cls.__nombre_instance

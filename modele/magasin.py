@@ -8,27 +8,11 @@ class Magasin:
     __nombre_instance = 0
 
     def __init__(self):
+        self.__produits : dict = {"electromenagers" : [], "primeurs" : [], "autres" : []} # deux tableaux de deux articles (éléctroménagers et primeurs)
         self.__depenses : float = 0 # le coût d'achat des produits
         self.__revenus : float = 0 # les revenus après la vente des produits
-        self.__produits : dict = {"electromenagers" : [], "primeurs" : [], "autres" : []} # deux tableaux de deux articles (éléctroménagers et primeurs)
 
-    # property depenses
-    @property
-    def depenses(self):
-        return self.__depenses
-    
-    @depenses.setter
-    def depenses(self, value : float):
-        self.__depenses = value
-
-    # property revenus
-    @property
-    def revenus(self):
-        return self.__revenus
-    
-    @revenus.setter
-    def revenus(self, value : float):
-        self.__revenus = value
+        Magasin.__nombre_instance += 1
 
     # property produits
     @property
@@ -38,6 +22,36 @@ class Magasin:
     @produits.setter
     def produits(self, value : dict):
         self.__produits = value
+
+    # property depenses
+    @property
+    def depenses(self):
+        depenses = 0
+        for electromenager in self.produits["electromenagers"]:
+            depenses += electromenager.prix_achat
+        for primeurs in self.produits["primeurs"]:
+            depenses += primeurs.prix_achat
+        self.__depenses = depenses
+        return self.__depenses
+    
+    @depenses.setter
+    def depenses(self, value : float):
+        self.__depenses = value
+
+    # property revenus
+    @property
+    def revenus(self):
+        revenus = 0
+        for electromenager in self.produits["electromenagers"]:
+            revenus += electromenager.prix_vente
+        for primeurs in self.produits["primeurs"]:
+            revenus += primeurs.prix_vente
+        self.__revenus = revenus
+        return self.__revenus
+    
+    @revenus.setter
+    def revenus(self, value : float):
+        self.__revenus = value
 
     # methodes complementaires
     ## calculateur du taux du rendement
@@ -62,3 +76,8 @@ class Magasin:
             else:
                 self.produits["autres"].append(article)
         raise ValueError("Vous essayez d'ajouter tout sauf un article !")
+    
+    ## nombre de magasin
+    @classmethod
+    def nombre_magasins(cls):
+        return cls.__nombre_instance
