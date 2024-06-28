@@ -38,8 +38,8 @@ _Cette classe n'implémente aucune interface._
 
 Chaque classe dérivée des articles respecte la règle suivante : **_au moment de la construction de l'objet, le stock est vide.**_
 
-1. La classe des artciles élécroménagers
-    Propriétés suplémentaires:
+1. La classe des articles élécroménagers
+    Propriétés supplémentaires:
         - nombre de pièces en stock :
 
     Méthodes supplémentaires (autre que le constructeur):
