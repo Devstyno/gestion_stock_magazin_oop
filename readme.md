@@ -36,7 +36,7 @@ _Cette classe n'implémente aucune interface._
 
 ## III. On a deux classes dérivées des Articles
 
-Chaque classe dérivée des articles respecte la règle suivante : **_au moment de la construction de l'objet, le stock est vide.**_
+Chaque classe dérivée des articles respecte la règle suivante : ***au moment de la construction de l'objet, le stock est vide.***
 
 1. La classe des articles élécroménagers
     Propriétés supplémentaires:
