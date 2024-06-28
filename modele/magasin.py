@@ -3,7 +3,7 @@ from modele.electromenager import Electromenager
 from modele.primeur import Primeur
 
 class Magasin:
-    """Classe générale des Articles."""
+    """Classe pour les magasins."""
 
     __nombre_instance = 0
 
