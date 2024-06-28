@@ -67,7 +67,7 @@ class Magasin:
         return f"Depenses : {self.depenses} XOF\nRevenus : {self.revenus} XOF\nRendement : {self.taux_rendement()} %"
     
     ## ajouter un article
-    def ajout_electromenager(self, article):
+    def ajout_article(self, article):
         if isinstance(article, Article):
             if isinstance(article, Electromenager):
                 self.produits["electromenagers"].append(article)
