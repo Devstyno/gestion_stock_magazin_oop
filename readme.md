@@ -73,4 +73,4 @@ Chaque classe dérivée des articles respecte la règle suivante : ***au moment 
 ## Travail à faire
 
 A. Coder les interfaces et les classes.
-B. Créer un fichier de testes qui crée un magasin, définit les articles à vendre, effectue le remplissage du stock et simule les achats.
+B. Créer un fichier de testes qui crée un magasin, définit les articles à vendre, effectue le remplissage du stock et simule les ventes.
