@@ -4,8 +4,8 @@ from interface.vendable_par_piece import VendableParPiece
 class Electromenager(Article, VendableParPiece): # heritage et implementation d'interface
     """La classe des articles élécroménagers."""
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, nom : str, fournisseur : str, achat : float, vente : float):
+        super().__init__(nom, fournisseur, achat, vente)
         self.__pieces_en_stock : int = 0 # polymorphisme
     
     # property pieces_en_stock

@@ -4,8 +4,8 @@ from interface.vendable_par_kilogramme import VendableParKilogramme
 class Primeur(Article, VendableParKilogramme): # heritage et implementation d'interface
     """La classe des primeurs."""
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, nom : str, fournisseur : str, achat : float, vente : float):
+        super().__init__(nom, fournisseur, achat, vente)
         self.__kg_en_stock : float = 0 # polymorphisme
     
     # property kg_en_stock
