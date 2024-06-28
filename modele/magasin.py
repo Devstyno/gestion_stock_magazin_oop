@@ -68,14 +68,15 @@ class Magasin:
     
     ## ajouter un article
     def ajout_article(self, article):
-        if isinstance(article, (Article, Electromenager, Primeur)):
+        if isinstance(article, Article):
             if isinstance(article, Electromenager):
                 self.produits["electromenagers"].append(article)
             elif isinstance(article, Primeur):
                 self.produits["primeurs"].append(article)
             else:
                 self.produits["autres"].append(article)
-        raise ValueError("Vous essayez d'ajouter tout sauf un article !")
+        else:
+            raise ValueError("Vous essayez d'ajouter tout sauf un article !")
     
     ## nombre de magasin
     @classmethod
