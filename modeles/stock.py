@@ -1,14 +1,14 @@
 from datetime import datetime
 from modeles.article import Article
-from modeles.magasin import Magazin
+# from modeles.magasin import Magazin
 
 class Stock:
     """Classe générale des Stocks."""
 
     __nombre_instance = 0
 
-    def __init__(self, magazin : Magazin, article : Article, prix_vente : float):
-        self.__magazin : Magazin = magazin # le magazin
+    def __init__(self, magazin, article : Article, prix_vente : float):
+        self.__magazin = magazin # le magazin
         self.__article : Article = article # l'article
         self.__prix_vente : float = prix_vente # le prix pour lequel le magazin vend le produit
         self.__quantite : float = 0
@@ -30,7 +30,7 @@ class Stock:
         return self.__magazin
     
     @magazin.setter
-    def magazin(self, value : Magazin):
+    def magazin(self, value):
         self.__magazin = value
 
     # property article
