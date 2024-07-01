@@ -72,7 +72,7 @@ class Magazin:
         return False, None
 
     def __in_store_article(self, stock : Stock, qtte : float):
-        stock.quantite += qtte
+        stock.update_quantite(qtte)
 
     def __ask_for_selling_price(self):
         while True:
@@ -125,13 +125,38 @@ class Magazin:
     def taux_rendement(self):
         """Calculateur du taux de rendement du magazin."""
         gains = self.revenus - self.depenses
-        rendement = 100 * gains / self.depenses
+        rendement = (gains / self.depenses) * 100
         return rendement
     
+    ## afficher les articles
+    def __get_articles(self):
+        print("LES ELECTROMENAGERS")
+        print("{:<30} {:<30} {:<30} {:<30}".format("Nom", "Fournisseur", "Prix d'achat", "Prix de vente"))
+        print("-" * 120)
+        for stock in self.produits["electromenagers"]:
+            article = stock.article
+            print("{:<30} {:<30} {:<30} {:<30}".format(article.nom, article.fournisseur.nom, article.prix, stock.prix_vente))
+        
+        print("\nLES PRIMEURS")
+        print("{:<30} {:<30} {:<30} {:<30}".format("Nom", "Fournisseur", "Prix d'achat", "Prix de vente"))
+        print("-" * 120)
+        for stock in self.produits["primeurs"]:
+            article = stock.article
+            print("{:<30} {:<30} {:<30} {:<30}".format(article.nom, article.fournisseur.nom, article.prix, stock.prix_vente))
+        
+        print("\nAUTRES")
+        print("{:<30} {:<30} {:<30} {:<30}".format("Nom", "Fournisseur", "Prix d'achat", "Prix de vente"))
+        print("-" * 120)
+        for stock in self.produits["autres"]:
+            article = stock.article
+            print("{:<30} {:<30} {:<30} {:<30}".format(article.nom, article.fournisseur.nom, article.prix, stock.prix_vente))
+
     ## description article
     def description(self):
         """Description de l'état du magazin."""
-        return f"Nom : {self.nom}\nDepenses : {self.depenses} XOF\nRevenus : {self.revenus} XOF\nRendement : {self.taux_rendement()} %"
+        print(f"Nom : {self.nom}\nDepenses : {self.depenses} XOF\nRevenus : {self.revenus} XOF\nRendement : {self.taux_rendement()} %")
+        print()
+        self.__get_articles()
     
     ## nombre de magazin
     @classmethod
