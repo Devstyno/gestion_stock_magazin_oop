@@ -1,13 +1,11 @@
-from modeles.fournisseur import Fournisseur
-
 class Article:
     """Classe générale des Articles."""
 
     __nombre_instance = 0
 
-    def __init__(self, nom : str, fournisseur : Fournisseur, prix : float):
+    def __init__(self, nom : str, fournisseur, prix : float):
         self.__nom : str = nom # le nom du produit
-        self.__fournisseur : Fournisseur = fournisseur # le fournisseur du produit
+        self.__fournisseur = fournisseur # le fournisseur du produit
         self.__prix : float = prix # le prix pour lequel le fournisseur vend le produit
     
         Article.__nombre_instance += 1
@@ -33,7 +31,7 @@ class Article:
         return self.__fournisseur
     
     @fournisseur.setter
-    def fournisseur(self, value : Fournisseur):
+    def fournisseur(self, value):
         self.__fournisseur = value
 
     # property prix

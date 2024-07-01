@@ -1,10 +1,9 @@
-from modeles.fournisseur import Fournisseur
 from modeles.article import Article
 
 class Electromenager(Article): # heritage
     """La classe des articles élécroménagers."""
 
-    def __init__(self, nom : str, fournisseur : Fournisseur, prix : float):
+    def __init__(self, nom : str, fournisseur, prix : float):
         super().__init__(nom, fournisseur, prix)
         self.__pieces_en_stock : int = 0 # polymorphisme
     

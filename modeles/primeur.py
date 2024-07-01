@@ -3,7 +3,7 @@ from modeles.article import Article
 class Primeur(Article): # heritage
     """La classe des primeurs."""
 
-    def __init__(self, nom : str, fournisseur : str, prix : float):
+    def __init__(self, nom : str, fournisseur, prix : float):
         super().__init__(nom, fournisseur, prix)
         self.__kg_en_stock : float = 0 # polymorphisme
     
