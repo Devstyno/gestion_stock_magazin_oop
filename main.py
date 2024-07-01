@@ -1,6 +1,5 @@
-from modele.magasin import Magasin
-from modele.electromenager import Electromenager
-from modele.primeur import Primeur
+from modeles.fournisseur import Fournisseur
+from modeles.magasin import Magazin
 
 def main():
     pass
