@@ -52,12 +52,6 @@ class Magazin:
     # property revenus
     @property
     def revenus(self):
-        revenus = 0
-        for electromenager in self.produits["electromenagers"]:
-            revenus += electromenager.prix_vente
-        for primeurs in self.produits["primeurs"]:
-            revenus += primeurs.prix_vente
-        self.__revenus = revenus
         return self.__revenus
     
     @revenus.setter
