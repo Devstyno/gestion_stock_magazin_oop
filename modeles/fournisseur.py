@@ -1,4 +1,6 @@
 from modeles.article import Article
+from modeles.electromenager import Electromenager
+from modeles.primeur import Primeur
 
 class Fournisseur:
     """Classe des Fournisseurs."""
@@ -42,7 +44,16 @@ class Fournisseur:
     # methodes complementaires
     ## produire un article
     def produire(self, nom : str, prix : float):
-        return Article(nom, self, prix)
+        type = input("De quel type d'article s'agit-il ?\nElectromenager - (E)\tPrimeur - (P)\tAutre - (A)\t:")
+        type = type.lower()
+        if type == "e":
+            return Electromenager(nom, self, prix)
+        elif type == "p":
+            return Primeur(nom, self, prix)
+        elif type == "a":
+            return Article(nom, self, prix)
+        else:
+            raise ValueError("Vous deviez saisir [E/P/A] !")
 
     ## description article
     def description(self):
