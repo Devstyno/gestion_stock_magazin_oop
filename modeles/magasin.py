@@ -108,7 +108,7 @@ class Magazin:
                 self.__in_store_article(stock, qtte)
             else:
                 self.__not_in_store_article(article, qtte)
-            self.depenses += article.prix
+            self.depenses += article.prix * qtte
         else:
             raise ValueError("Ceci n'est pas un article !")
 
@@ -119,7 +119,7 @@ class Magazin:
             if stock.quantite > 0:
                 if qtte <= stock.quantite:
                     stock.quantite -= qtte
-                    self.revenus += stock.prix_vente
+                    self.revenus += stock.prix_vente * qtte
                 else:
                     print("Quantite en stock insuffisante !")
             else:
